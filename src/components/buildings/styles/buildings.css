@@ -1,0 +1,105 @@
+/* Window glow animation - subtle breathing effect */
+@keyframes window-glow {
+  0%, 100% {
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.3);
+  }
+}
+
+.window-animated {
+  animation: window-glow 3s ease-in-out infinite;
+}
+
+/* Random window flicker for apartments/skyscrapers */
+@keyframes window-flicker {
+  0%, 90%, 100% {
+    opacity: var(--window-base-opacity, 0.85);
+  }
+  92%, 98% {
+    opacity: 0.3;
+  }
+}
+
+.window-flicker {
+  animation: window-flicker 5s ease-in-out infinite;
+}
+
+/* Random variation for more natural look */
+.window-animated-random {
+  animation: window-glow 4s ease-in-out infinite;
+}
+
+/* Corporate accent band pulse */
+@keyframes accent-pulse {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--neon-blue));
+  }
+}
+
+.accent-pulse {
+  animation: accent-pulse 2s ease-in-out infinite;
+}
+
+/* Antenna blink */
+@keyframes blink-slow {
+  0%, 45%, 55%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.blink-slow {
+  animation: blink-slow 2s ease-in-out infinite;
+}
+
+/* Chimney smoke for small house */
+@keyframes smoke-rise {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(2);
+  }
+}
+
+.smoke-particle {
+  animation: smoke-rise 3s ease-out infinite;
+}
+
+/* Building container hover effect */
+.building-container:hover .building-svg {
+  filter: brightness(1.1);
+  transition: filter 0.3s ease;
+}
+
+/* Building type transition */
+.building-svg {
+  transition: filter 0.3s ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .window-animated,
+  .window-flicker,
+  .window-animated-random,
+  .accent-pulse,
+  .blink-slow,
+  .smoke-particle {
+    animation: none;
+  }
+}

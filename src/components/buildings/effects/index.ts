@@ -1,0 +1,1 @@
+export { UpgradeParticles } from './UpgradeParticles';
